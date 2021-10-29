@@ -1,0 +1,27 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.item a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+}
+
+.item a:hover {
+    background-color: transparent;
+}

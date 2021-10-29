@@ -1,0 +1,10 @@
+.pre {
+    filter: invert(1);
+    color: #000000;
+    background: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 8px;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    font-size: 0.9rem;
+}

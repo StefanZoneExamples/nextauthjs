@@ -1,0 +1,15 @@
+.button {
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    line-height: 1.4rem;
+    padding: 0.7rem 0.8rem;
+    background-color: transparent;
+    color: #555555;
+}
+
+.button:hover {
+    background-color: #e6e6e6;
+    color: #000000;
+}

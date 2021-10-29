@@ -1,0 +1,47 @@
+{
+    "name": "nextauthjs",
+    "version": "1.0.0",
+    "description": "Example project to demonstrate how to use NextAuth.js.",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --ignore-path ./.gitignore --write .",
+        "check-format": "prettier --ignore-path ./.gitignore --check .",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/StefanZoneExamples/nextauthjs.git"
+    },
+    "keywords": [
+        "nextauthjs",
+        "nextjs"
+    ],
+    "author": "Stefan Kühnel, <git@stefankuehnel.com>",
+    "bugs": {
+        "url": "https://github.com/StefanZoneExamples/nextauthjs/issues"
+    },
+    "homepage": "https://nextauthjs.eg.stefan.zone",
+    "dependencies": {
+        "@fontsource/source-serif-pro": "^4.5.0",
+        "classnames": "^2.3.1",
+        "googleapis": "^89.0.0",
+        "http-json-errors": "^1.2.11",
+        "next": "11.1.2",
+        "next-auth": "^3.29.0",
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+    },
+    "devDependencies": {
+        "@trivago/prettier-plugin-sort-imports": "^2.0.4",
+        "@types/react": "17.0.32",
+        "eslint": "7.32.0",
+        "eslint-config-next": "11.1.2",
+        "eslint-config-prettier": "^8.3.0",
+        "husky": "^7.0.4",
+        "prettier": "2.4.1",
+        "typescript": "4.4.4"
+    }
+}

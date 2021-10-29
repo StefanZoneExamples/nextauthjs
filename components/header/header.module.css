@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 0.6rem 0.6rem;
+    padding: 0.6rem 1rem;
+
+    /* Notwendig für Animation des Headers. */
+    position: relative;
+    transition: all 0.2s ease-in;
+}
+
+/* Konditionale Animation des Headers. */
+.loading {
+    top: -2rem;
+    opacity: 0;
+}
+
+.loaded {
+    top: 0;
+    opacity: 1;
+}

@@ -1,0 +1,19 @@
+# Merge Dependabot Pull Requests Automatically.
+name: Dependabot Automerge
+
+on:
+    pull_request_target:
+
+jobs:
+    auto-merge:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: ahmadnassri/action-dependabot-auto-merge@v2
+              with:
+                  # Dependabot will automatically merge all pull requests that contain
+                  # minor version increases for dependencies. E.g. Dependabot will automatically
+                  # merge version increase from 1.0.1 to 1.0.2, but not from 1.0.1 to 2.0.0,
+                  # because this change may contain a breaking change.
+                  target: minor
+                  github-token: ${{ secrets.DEPENDABOT_AUTOMERGE_TOKEN }}

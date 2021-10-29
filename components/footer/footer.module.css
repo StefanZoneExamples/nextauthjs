@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 2rem;
+}
+
+.items {
+    list-style: none;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.item {
+    display: inline-block;
+    margin-right: 1rem;
+}

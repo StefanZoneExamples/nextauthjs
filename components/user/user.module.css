@@ -1,0 +1,13 @@
+.user {
+    display: inline-flex;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.text {
+    margin-left: 15px;
+    margin-bottom: 4px;
+}
