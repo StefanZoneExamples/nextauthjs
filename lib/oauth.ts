@@ -40,24 +40,4 @@ export default class OAuth {
 
         return accessToken;
     }
-
-    /**
-     * Rückgabe des Access Token.
-     *
-     * @param req Ein Next Api Request.
-     * @return Promise Refresh Token.
-     */
-    static async getRefreshToken(req: NextApiRequest): Promise<JWT['refreshToken'] | null> {
-        // Der aktuelle JWT.
-        const jwt = await OAuth.getJWT(req);
-
-        // Der Refresh Token.
-        const { refreshToken } = { ...jwt };
-
-        // Der Refresh Token konnte nicht gefunden werden.
-        // Ein Grund hierfür könnte sein, dass der Nutzer nicht angemeldet ist.
-        if (!refreshToken) throw new Forbidden('Missing required refresh token.');
-
-        return refreshToken;
-    }
 }
