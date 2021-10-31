@@ -1,5 +1,6 @@
 .pre {
     filter: invert(1);
+    overflow: auto;
     color: #000000;
     background: #ccc;
     border: 1px solid #ccc;
