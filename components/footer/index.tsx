@@ -13,13 +13,9 @@ export default function Footer() {
                     </Link>
                 </li>
                 <li className={styles.item}>
-                    <a
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href="https://9bn.de/privacy?lang=en"
-                    >
-                        Privacy Policy
-                    </a>
+                    <Link href="/privacy">
+                        <a>Privacy Policy</a>
+                    </Link>
                 </li>
                 <li className={styles.item}>
                     <Link href="/faq">
