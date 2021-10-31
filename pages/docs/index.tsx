@@ -120,7 +120,7 @@ const Index: NextPage = () => {
                             rel="noreferrer noopener"
                         >
                             secret
-                        </a>{' '}
+                        </a>
                         .
                     </li>
                     <li>
