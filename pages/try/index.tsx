@@ -1,7 +1,9 @@
+import { useSpreadSheet } from 'hooks';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
 import Layout from 'components/layout';
+import Response from 'components/response';
 
 const Index: NextPage = () => {
     return (
@@ -22,7 +24,7 @@ const Index: NextPage = () => {
                 <p>
                     <em>/api/provider/google/spreadsheets/values/json</em>
                 </p>
-                <iframe src="/api/provider/google/spreadsheets/values/json" />
+                <Response {...useSpreadSheet()} />
             </Layout>
         </>
     );
