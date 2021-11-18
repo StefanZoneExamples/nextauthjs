@@ -1,7 +1,7 @@
 # NextAuth.js Example
 
 [![Node.js](../../actions/workflows/node.js.yml/badge.svg)](../../actions/workflows/node.js.yml)
-![Netlify](https://img.shields.io/netlify/07a30f52-875f-4593-bc29-8aea435fd0a1?logo=netlify&logoColor=white)
+![Netlify](https://img.shields.io/netlify/07a30f52-875f-4593-bc29-8aea435fd0a1?label=Netlify&logo=netlify&logoColor=959DA5)
 
 Example project to demonstrate how to use NextAuth.js.
 
