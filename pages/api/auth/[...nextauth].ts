@@ -9,8 +9,7 @@ export default NextAuth({
             clientSecret: process.env.GOOGLE_SECRET,
             scope: [
                 'https://www.googleapis.com/auth/userinfo.profile',
-                'https://www.googleapis.com/auth/userinfo.email',
-                'https://www.googleapis.com/auth/spreadsheets.readonly'
+                'https://www.googleapis.com/auth/userinfo.email'
             ].join(' ')
         })
     ],
@@ -50,22 +49,6 @@ export default NextAuth({
             // Ist ein Nutzer in der Liste authorisierter Nutzer enthalten, erhält er Zugriff auf den Dienst.
             // Ansonsten nicht.
             return authorizedUsers.includes(email);
-        },
-        async jwt(token, user, account) {
-            if (account && user) {
-                return Object.assign(
-                    {
-                        // OAuth 2.0 Access Token zum Zugriff auf geschützte Ressourcen.
-                        accessToken: account.accessToken || account.access_token,
-                        // OAuth 2.0 Refresh Token zur Aktualisierung des Access Token.
-                        refreshToken: account.refreshToken || account.refresh_token
-                    },
-                    token
-                );
-            }
-
-            // Kein OAuth 2.0 Access Token gefunden.
-            return token;
         }
     }
 });
