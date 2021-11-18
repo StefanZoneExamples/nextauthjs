@@ -1,10 +1,21 @@
+import { Unauthorized } from 'http-json-errors';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { getSession } from 'next-auth/client';
 import Json from 'utils/json';
 
 import Sheet from 'lib/provider/google/sheet';
 
 export default async function json(req: NextApiRequest, res: NextApiResponse) {
     try {
+        // Abfrage der aktuellen Session.
+        // Ist diese nicht vorhanden, so ist der Nutzer nicht angemeldet.
+        const session = await getSession({ req });
+
+        // Für den Zugriff ist eine Anmeldung erforderlich.
+        if (!session) {
+            throw new Unauthorized('Authentication required to access the protected resource.');
+        }
+
         // Die Spreadsheet ID und der auszulesende Zellbereich.
         const id = '1NTuZ200WEsEmMsbZtUspLiAzJxB6V_eMfhJlUGQAzag';
         const range = 'Sheet1'; // Komplettes Blatt der Tabelle.
