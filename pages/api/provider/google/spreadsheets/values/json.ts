@@ -1,24 +1,22 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Json from 'utils/json';
 
-import GoogleSheet from 'lib/googlesheet';
-import OAuth from 'lib/oauth';
+import Sheet from 'lib/provider/google/sheet';
 
 export default async function json(req: NextApiRequest, res: NextApiResponse) {
     try {
-        // Initialisierung der Google Tabelle mit Hilfe des OAuth 2.0 Access Tokens.
-        const accessToken = await OAuth.getAccessToken(req);
-        const sheet = new GoogleSheet(`${accessToken}`);
-
         // Die Spreadsheet ID und der auszulesende Zellbereich.
-        const spreadsheet = '1NTuZ200WEsEmMsbZtUspLiAzJxB6V_eMfhJlUGQAzag';
+        const id = '1NTuZ200WEsEmMsbZtUspLiAzJxB6V_eMfhJlUGQAzag';
         const range = 'Sheet1'; // Komplettes Blatt der Tabelle.
 
+        // Ein neues Google SpreadSheet.
+        const sheet = new Sheet(id);
+
         // Die Werte der Tabelle.
-        const values = (await sheet.getValues(spreadsheet, range)) || [];
+        const entries = (await sheet.getEntries(range)) || [];
 
         // Verbesserung der Lesbarkeit.
-        const response = Json.prettyPrint({ values });
+        const response = Json.prettyPrint({ entries });
 
         return res.status(200).json(response);
     } catch (error) {
