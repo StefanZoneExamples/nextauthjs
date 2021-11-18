@@ -11,20 +11,6 @@ const Index: NextPage = () => {
             </Head>
             <Layout>
                 <h1>FAQ</h1>
-                <h2>Access Other Google Users&apos; Spreadsheets</h2>
-                <p>
-                    In order to get access to spreadsheets of other Google users, it is necessary
-                    that they share the corresponding spreadsheet with you. For more information,
-                    see the Google Workspace Learning Center article{' '}
-                    <a
-                        href="https://support.google.com/a/users/answer/9305987?hl=en"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                    >
-                        share and collaborate on files
-                    </a>
-                    .
-                </p>
                 <h2>Restrict Access to Authorized Users</h2>
                 <p>
                     In order to restrict access to selected users only, it is necessary to activate
