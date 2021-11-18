@@ -13,10 +13,10 @@ export default async function json(req: NextApiRequest, res: NextApiResponse) {
         const sheet = new Sheet(id);
 
         // Die Werte der Tabelle.
-        const entries = (await sheet.getEntries(range)) || [];
+        const values = (await sheet.getValues(range)) || [];
 
         // Verbesserung der Lesbarkeit.
-        const response = Json.prettyPrint({ entries });
+        const response = Json.prettyPrint({ values });
 
         return res.status(200).json(response);
     } catch (error) {

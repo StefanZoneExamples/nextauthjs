@@ -43,7 +43,7 @@ export default class Sheet {
      * @param range Ein Zellbereich.
      * @return Array Einträge.
      */
-    async getEntries(range: string) {
+    async getValues(range: string) {
         const { id, client } = this;
 
         // Abfrage der Daten.
@@ -53,8 +53,8 @@ export default class Sheet {
         });
 
         // Auslesen der Einträge.
-        const { values: entries } = response.data;
+        const { values } = response.data;
 
-        return entries;
+        return values;
     }
 }
