@@ -102,6 +102,90 @@ const Index: NextPage = () => {
                         <strong>Client Secret</strong>.
                     </li>
                 </ol>
+                <h4>Create OAuth Service Account</h4>
+                <ol>
+                    <li>
+                        Navigate to the{' '}
+                        <a
+                            href="https://console.cloud.google.com/iam-admin/serviceaccounts/create"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            Service Account Wizard
+                        </a>
+                        .
+                    </li>
+                    <li>
+                        Next, fill in all the required fields related to the{' '}
+                        <strong>Service account details</strong>. Then click <strong>done</strong>.
+                    </li>
+                    <li>
+                        Click the email address for the service account you created on the{' '}
+                        <a
+                            href="https://console.cloud.google.com/iam-admin/serviceaccounts"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            Service Account Overview Page
+                        </a>
+                        .
+                    </li>
+                    <li>
+                        Click the Keys <strong>Keys</strong> tab.
+                    </li>
+                    <li>
+                        In the <strong>Add key</strong> drop-down list, select{' '}
+                        <strong>Create new key</strong>.
+                    </li>
+                    <li>
+                        Click <strong>Create</strong>.
+                    </li>
+                </ol>
+                <p>You should now have a JSON file similar to this:</p>
+                <Pre>
+                    {`{
+                        \t"type": "service_account",
+                        \t"project_id": "...",
+                        \t"private_key_id": "...",
+                        \t"private_key": "...",
+                        \t"client_email": "...",
+                        \t"client_id": "...",
+                        \t"auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                        \t"token_uri": "https://accounts.google.com/o/oauth2/token",
+                        \t"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+                        \t"client_x509_cert_url": "..."
+                    }`.replace(/\s +/g, '\n')}
+                </Pre>
+                <p>Download it to your local machine and store it securely.</p>
+                <h2>Grant Permissions</h2>
+                <p>Now you need to grant permission to your sheet.</p>
+                <ol>
+                    <li>
+                        Open your{' '}
+                        <a href="https://g.co/sheets" target="_blank" rel="noreferrer noopener">
+                            Google Sheet
+                        </a>
+                        .
+                    </li>
+                    <li>Choose a spreadsheet.</li>
+                    <li>
+                        In the top right, click <strong>Share</strong>.
+                    </li>
+                    <li>
+                        Paste your <strong>service account email</strong> or make it public.
+                    </li>
+                </ol>
+                <p>
+                    For more information, see the Google Workspace Learning Center article{' '}
+                    <a
+                        href="https://support.google.com/a/users/answer/9305987?hl=en"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        share and collaborate on files
+                    </a>
+                    .
+                </p>
                 <h2>Configure Environment Variables</h2>
                 <p>
                     Copy the <em>.env.local.example</em> file to <em>.env.local</em> (which will be
@@ -128,6 +212,12 @@ const Index: NextPage = () => {
                     </li>
                     <li>
                         <em>GOOGLE_SECRET</em>: Google OAuth Client Secret.
+                    </li>
+                    <li>
+                        <em>GOOGLE_CLIENT_EMAIL</em>: Google OAuth Service Account E-Mail.
+                    </li>
+                    <li>
+                        <em>GOOGLE_PRIVATE_KEY</em>: Google OAuth Service Account Private Key.
                     </li>
                     <li>
                         <em>NEXTAUTH_URL</em>: Canonical Web Application URI.
