@@ -6,7 +6,7 @@ Example project to demonstrate how to use NextAuth.js.
 
 ## Found a bug? 👷‍
 
-Thanks for letting us know! Please [file an issue](../../issues/new?assignees=&labels=&template=bug_report.md&title=) and I should reply shortly.
+Thanks for letting me know! Please [file an issue](../../issues/new?assignees=&labels=&template=bug_report.md&title=) and I should reply shortly.
 
 ## Building the site 🏗
 
