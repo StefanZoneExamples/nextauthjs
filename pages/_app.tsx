@@ -1,21 +1,15 @@
 import '@fontsource/source-serif-pro/latin.css';
 import axios from 'axios';
-import { Provider } from 'next-auth/client';
+import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import 'normalize.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import 'styles/globals.css';
 import { errorHandler } from 'utils/axios';
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     return (
-        <Provider
-            options={{
-                clientMaxAge: 0,
-                keepAlive: 0
-            }}
-            session={pageProps.session}
-        >
+        <SessionProvider session={session} refetchInterval={5 * 60}>
             <QueryClientProvider
                 client={
                     new QueryClient({
@@ -38,7 +32,7 @@ function App({ Component, pageProps }: AppProps) {
             >
                 <Component {...pageProps} />
             </QueryClientProvider>
-        </Provider>
+        </SessionProvider>
     );
 }
 
