@@ -10,7 +10,7 @@ export default function Header() {
     const { data: session, status } = useSession();
 
     // Test, ob die Daten geladen wurden.
-    const isLoading = status === "loading"
+    const isLoading = status === 'loading';
 
     // Die Nutzung von "bind" ermöglicht die Verwendung der classNames Bibliothek
     // in Kombination mit Next.js CSS Modulen. Die Funktionalität der Verwendung
