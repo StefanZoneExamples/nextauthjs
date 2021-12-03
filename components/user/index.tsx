@@ -1,9 +1,9 @@
-import { DefaultUser } from 'next-auth';
+import { DefaultSession } from 'next-auth';
 import Image from 'next/image';
 
 import styles from './user.module.css';
 
-export default function User(user: DefaultUser) {
+export default function User(user: DefaultSession['user'] = {}) {
     // Die Daten des aktuell eingeloggten Benutzers.
     const { name, email, image } = user;
 

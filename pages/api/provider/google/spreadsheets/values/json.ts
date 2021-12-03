@@ -1,6 +1,6 @@
 import { Unauthorized } from 'http-json-errors';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getSession } from 'next-auth/client';
+import { getSession } from 'next-auth/react';
 import Json from 'utils/json';
 
 import Sheet from 'lib/provider/google/sheet';
