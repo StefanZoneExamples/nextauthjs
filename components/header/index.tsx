@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 import Button from 'components/button';
 import User from 'components/user';
@@ -7,7 +7,10 @@ import User from 'components/user';
 import styles from './header.module.css';
 
 export default function Header() {
-    const [session, isLoading] = useSession();
+    const { data: session, status } = useSession();
+
+    // Test, ob die Daten geladen wurden.
+    const isLoading = status === 'loading';
 
     // Die Nutzung von "bind" ermöglicht die Verwendung der classNames Bibliothek
     // in Kombination mit Next.js CSS Modulen. Die Funktionalität der Verwendung
