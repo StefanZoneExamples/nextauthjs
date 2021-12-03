@@ -1,13 +1,13 @@
 import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers';
+import GoogleProvider from 'next-auth/providers/google';
 import getConfig from 'next/config';
 
 export default NextAuth({
     providers: [
-        Providers.Google({
+        GoogleProvider({
             clientId: process.env.GOOGLE_ID,
             clientSecret: process.env.GOOGLE_SECRET,
-            scope: [
+            authorization: [
                 'https://www.googleapis.com/auth/userinfo.profile',
                 'https://www.googleapis.com/auth/userinfo.email'
             ].join(' ')
@@ -22,7 +22,7 @@ export default NextAuth({
 
     // Rückruffunktionen, die bei bestimmten Ereignissen aufgerufen werden.
     callbacks: {
-        async signIn(user, account, profile) {
+        async signIn({ user, account, profile }) {
             // Die Werte der serverRuntimeConfig sind nur serverseitig zugänglich.
             // Sie werden aus der next.config.js Datei ausgelesen.
             const { serverRuntimeConfig } = getConfig();
