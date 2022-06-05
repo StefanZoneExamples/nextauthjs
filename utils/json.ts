@@ -39,19 +39,4 @@ export default class Json {
 
         return httpError;
     }
-
-    /**
-     * Generiert aus einem gegebenen JavaScript Objekt eine formatierte
-     * JSON Zeichenkette.
-     *
-     * @param object Ein JavaScript Objekt.
-     * @return JSON JSON-Zeichenkette, die den angegebenen Wert darstellt,
-     *              oder undefiniert.
-     */
-    static prettyPrint(object: Object) {
-        const spaces = 2;
-        const replacer = null;
-
-        return JSON.stringify(object, replacer, spaces);
-    }
 }

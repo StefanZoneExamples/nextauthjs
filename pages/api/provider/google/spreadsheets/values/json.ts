@@ -26,17 +26,11 @@ export default async function json(req: NextApiRequest, res: NextApiResponse) {
         // Die Werte der Tabelle.
         const values = (await sheet.getValues(range)) || [];
 
-        // Verbesserung der Lesbarkeit.
-        const response = Json.prettyPrint({ values });
-
-        return res.status(200).json(response);
+        return res.status(200).json({ values });
     } catch (error) {
         // Einheitlich formatierter Fehler.
         const httpError = Json.createError(error as Error);
 
-        // Verbesserung der Lesbarkeit.
-        const response = Json.prettyPrint({ error: httpError });
-
-        return res.status(httpError.statusCode).json(response);
+        return res.status(httpError.statusCode).json({ error: httpError });
     }
 }
