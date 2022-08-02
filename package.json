@@ -28,7 +28,7 @@
         "@fontsource/source-serif-pro": "^4.5.8",
         "axios": "^0.26.1",
         "classnames": "^2.3.1",
-        "googleapis": "^101.0.0",
+        "googleapis": "^105.0.0",
         "http-json-errors": "^1.2.12",
         "next": "12.2.2",
         "next-auth": "^4.10.3",
